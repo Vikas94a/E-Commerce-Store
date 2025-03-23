@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import { AppContext } from "../../App"
 import MiniCart from "./MiniCart"
+import { FaShoppingCart } from "react-icons/fa"
 
 
 
@@ -9,19 +10,18 @@ export default function Cart(){
 const{cart}=useContext(AppContext)
 
 function handleMiniCart(){
-   setIsCartOpen(true)
-   if(isCartOpen){
-    setIsCartOpen(false)
-   }
+  setIsCartOpen(!isCartOpen)
 }
 
 
 
     return(
-        <div className="absolute right-8.5 top-12">
-            <button onClick={handleMiniCart} >Cart</button>
-            <p>{cart.length}</p>
-           {isCartOpen && <MiniCart/>} 
+        <div className="flex relative">
+            <div className="text-white font-bold text-3xl cursor-pointer" onClick={handleMiniCart} ><FaShoppingCart/> </div>
+            <span className=" bg-rose-500 text-white  w-5 h-5 rounded-full absolute left-4 bottom-5 flex items-center justify-center text-sm" >{cart.length}</span>
+           
+           <div>  {isCartOpen && <MiniCart  onClose={()=> setIsCartOpen(false)} />}     </div>
+          
         </div>
     )
 }

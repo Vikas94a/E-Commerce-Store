@@ -27,14 +27,15 @@ export default function Menuoption() {
   }, []);
 
   return(
-    <div className="flex flex-row flex-wrap justify-around w-full h-auto ">
+    <div className="flex flex-col flex-wrap justify-center w-62 h-auto bg-blue-200 p-4 shadow-amber-200">
         
         {category.map((option, index)=>{
+          // console.log(option)
             return(
               <Link key={index}  to={`/category/${option}`}>
-                    <ol className="list-none p-2 w-auto text-white">
-                        {option}
-                    </ol>
+                    <li className="list-none p-2 w-auto text-black font-bold">
+                        {option.charAt(0).toUpperCase()+ option.slice(1)}
+                    </li>
                     </Link>
                 
             )
