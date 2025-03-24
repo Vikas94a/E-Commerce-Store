@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AppContext } from "../../App";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 export default function MiniCart({ onClose }) {
   const { cart } = useContext(AppContext);
@@ -41,9 +42,12 @@ export default function MiniCart({ onClose }) {
               </div>
             ))}
             <div className="mt-4 text-center">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+
+        <Link to={`/Checkout`}>
+              <button onClick={onClose} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Checkout
               </button>
+              </Link>
             </div>
           </div>
         ) : (

@@ -2,7 +2,7 @@ import "./App.css";
 import Footer from "./assets/components/Footer";
 import NavBar from "./assets/components/NavBar";
 import { useEffect, useState, createContext } from "react";
-import { Outlet } from "react-router-dom";
+import { data, Outlet } from "react-router-dom";
 
 export const AppContext = createContext();
 
@@ -16,7 +16,9 @@ function App() {
   const [limit, setLimit]= useState(30)
   const [skip, setSkip]= useState(30)
   const [search, setSearch] = useState("");
-  const[cart, setCart]=useState([])
+  const[cart, setCart]=useState(()=>{const savedData= localStorage.getItem('data')
+    return savedData ? JSON.parse(savedData):[]
+  })
 
   useEffect(() => {
     async function fetchData() {

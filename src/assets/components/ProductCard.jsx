@@ -14,6 +14,7 @@ export default function ProductCard({id, image, title, price,discountPercentage,
 setCart(cart.map((item)=> item.id === id ? {...item, quantity:item.quantity+1}: item))
 // console.log(cart)
        }else setCart([...cart, {image, id, title, price,quantity:1 }])
+       localStorage.setItem("data", JSON.stringify(cart))
     }
 
 

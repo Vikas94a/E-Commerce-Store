@@ -6,6 +6,7 @@ import HomeView from "./assets/views/HomeView.jsx";
 import ErrorView from "./assets/views/ErrorView.jsx";
 import PrductByCategory from "./assets/views/ProductByCategory.jsx";
 import ProductView from "./assets/views/ProductView.jsx";
+import Checkout from "./assets/views/CheckoutPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
       },{
         path:"productview/:id",
         element:<ProductView/>
+      },{
+        path:"checkout",
+        element:<Checkout/>
       }
     ],
   },
