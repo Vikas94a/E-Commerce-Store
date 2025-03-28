@@ -7,7 +7,7 @@ import Menuoption from "../components/MenuOption";
 export default function HomeView() {
 
   const context= useContext(AppContext)
-
+console.log(context)
   if(!context){
   return <div>Loading</div>
   }
@@ -15,6 +15,7 @@ export default function HomeView() {
   const{dummyData, paginationFunction}=context
 
   
+  console.log(dummyData)
 
   return (<>
     <div className="flex gap-1 p-3">

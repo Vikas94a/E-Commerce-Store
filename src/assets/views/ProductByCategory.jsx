@@ -10,7 +10,7 @@ export default function PrductByCategory() {
   const [products, setProducts] = useState([]);
 
   const context= useContext(AppContext)
-
+console.log(context)
   if(!context){
     return <div>Loading.....</div>
   }
@@ -51,6 +51,8 @@ if(!search){
   // useEffect(() => {
   //   console.log(loading)
   // },[])
+
+  console.log(products)
 
   return (
     <>
